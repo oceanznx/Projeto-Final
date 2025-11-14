@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +34,9 @@
     </nav>
 
         </header>
+
+        <div class="nav-overlay" id="nav-overlay"></div>
+
     <main>
         <div data-aos="fade-zoom-in"
      data-aos-easing="ease-in-back"
@@ -75,23 +78,34 @@
 
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.3/build/spline-viewer.js" async></script>
 <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const navLinks = document.getElementById("nav-links");
+  const menuBtn = document.getElementById("menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  const navOverlay = document.getElementById("nav-overlay");
 
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuBtn.classList.toggle("active");
+    navOverlay.classList.toggle("active");
+  });
+
+  // fechar menu ao clicar no overlay
+  navOverlay.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuBtn.classList.remove("active");
+    navOverlay.classList.remove("active");
+  });
+
+  // opcional: fechar ao clicar em um link
+  document.querySelectorAll('nav.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove("active");
+      menuBtn.classList.remove("active");
+      navOverlay.classList.remove("active");
     });
-
-    menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    menuBtn.classList.toggle("active");
-});
-
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    menuBtn.classList.toggle("active");
-});
+  });
 </script>
+
+
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>

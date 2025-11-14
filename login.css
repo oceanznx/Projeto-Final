@@ -60,6 +60,9 @@ body {
 }
 
 
+
+
+
 header .logo img {
     width: 150px;
     height: auto;
@@ -103,9 +106,6 @@ nav a {
 nav a:hover {  
     color: #4C8C87; 
 }
-
-
-
 
 
  main {
@@ -260,7 +260,7 @@ nav a:hover {
     }
 
     .earth {
-        scale: 1;
+        scale: 1.1;
         right: 0;
         position: absolute;
         z-index: -1;
@@ -279,6 +279,7 @@ nav a:hover {
 
     .desc {
         font-size: 1rem;
+       color: #ffffff;
     }
 
     .btn-start {
@@ -294,11 +295,11 @@ nav a:hover {
        body {
         background: radial-gradient(
             circle at center,
-            rgba(78, 77, 77, 0.461) 0%,        /* centro super escuro */
-            rgb(78, 82, 81) 25%, /* quase preto */
-            rgb(43, 57, 55) 45%, /* profundidade escura */
-            rgb(23, 37, 37) 65%, /* bordas discretas */
-            rgb(0, 0, 0) 100% /* bordas bem escuras */
+            rgba(101, 101, 101, 0.461) 0%,   
+            rgb(109, 113, 112) 25%,
+            rgb(67, 93, 89) 45%,
+            rgb(50, 80, 80) 65%, 
+            rgb(15, 19, 21) 100% 
         );
         background-size: cover;
         overflow-x: hidden;
@@ -315,53 +316,108 @@ nav a:hover {
     transition: 0.4s ease;
 }
 
+/* MOBILE: menu lateral vindo da DIREITA */
 @media (max-width: 768px) {
-    .menu-btn {
-        display: flex;
-    }
 
-    nav.nav-links {
-        position: absolute;
-        top: 70px;
-        right: 10px;
-        background: rgba(20, 35, 35, 0.95);
-        backdrop-filter: blur(6px);
-        padding: 1.5rem 2rem;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        opacity: 0;
-        pointer-events: none;
-        transform: scale(0.8);
-        transition: 0.3s ease-in-out;
-        box-shadow: 0 0 25px rgba(0,0,0,0.4);
-        z-index: 999;
-    }
+  /* esconde o nav horizontal do desktop */
+  nav {
+    display: none;
+  }
 
-    /* Estado expandido */
-    nav.nav-links.active {
-        opacity: 1;
-        pointer-events: auto;
-        transform: scale(1);
-    }
+  /* botao hamburguer (visível no mobile) */
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 10002;
+    margin-right: 1rem;
+  }
+  .menu-btn span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    display: block;
+  }
 
-    /* Esconde nav antiga */
-    nav.nav-links a {
-        font-size: 1.2rem;
-        margin: 0;
-    }
-}
-
-.menu-btn.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.menu-btn.active span:nth-child(2) {
+  /* overlay escuro (aparece quando o menu abre) */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
     opacity: 0;
-}
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 10000;
+  }
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-.menu-btn.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
+  /* menu lateral vindo da direita */
+  nav.nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;                /* começa fora da tela no lado direito */
+    height: 100%;
+    width: 260px;            /* largura da barra */
+    background: rgba(12,20,20,0.98);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    gap: 1.5rem;
 
+    transform: translateX(100%); /* escondido à direita */
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(.22,.9,.32,1), opacity 0.25s ease;
+    box-shadow: -8px 0 30px rgba(0,0,0,0.5);
+    z-index: 10001;
+  }
+
+  /* estado aberto */
+  nav.nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* links estilizados */
+  nav.nav-links a {
+    font-size: 1.15rem;
+    color: #e7f7f2;
+    text-decoration: none;
+    padding: 0.35rem 0.25rem;
+    transition: color 0.18s ease, transform 0.18s ease;
+  }
+  nav.nav-links a:hover {
+    color: #9ce69c;
+    transform: translateX(-4px);
+  }
+
+  /* reposiciona header items para o mobile */
+  header {
+    padding: 0.6rem 1rem;
+    position: relative;
+    align-items: center;
+  }
+
+  /* alinhar botao hamburguer à direita no header */
+  .menu-btn {
+    position: relative;
+    margin-left: auto;
+  }
+
+  /* opcional: transforma o botão em X quando ativo */
+  .menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
