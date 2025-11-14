@@ -10,7 +10,7 @@
 
 body {
     font-family: Poppins;
-    background: linear-gradient(135deg, #000000, #0c1414, #1b2d2dee, #385e5dcd);
+    background: linear-gradient(135deg, #000000, #0c1414, #1b2d2dee, #587c7c);
     color: white;
     min-height: 100vh;
     line-height: 1.5;
@@ -32,7 +32,7 @@ body {
     right: 0;
     box-shadow: 0 0 500px 10px rgba(150, 255, 200, 0.35);
     rotate: -30deg;
-    z-index: -1;
+   
 }
 
 .container {
@@ -41,7 +41,6 @@ body {
     padding:  0 2rem;
     position: relative;
     overflow: hidden;
-    z-index: 999;
 }
 
 .menu-btn {
@@ -69,15 +68,6 @@ header .logo img {
     margin-bottom: 5px;
 }
 
-header .logo img {
-    transition: 0.5s  ease-in-out;
-}
-
-header .logo img:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 1px rgba(181, 220, 237, 0.852));
-}
-
 
 
 header {
@@ -85,6 +75,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
+   
 }
 
 
@@ -94,7 +85,7 @@ nav {
     align-items: center;
     gap: 3rem;
     margin-left: -5%;
-  
+ 
 }
 
 nav a {
@@ -104,32 +95,18 @@ nav a {
     text-decoration: none;
     color: inherit;
     z-index: 999;
-    transition: color 0.3s ease;
+    transition: color 0.9s ease;
     margin-bottom: 40px;
+    z-index: 999;
 }
 
 nav a:hover {  
-    color: #4C8C87;
-
+    color: #4C8C87; 
 }
 
-.signin {
-    background-color: #4C8C87;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.2s ease;
-    cursor: pointer;
-    z-index: 999;
-    
-}
 
-.signin:hover {
-    background-color: rgb(100, 158, 136);
-}
+
+
 
  main {
     display: flex;
@@ -283,7 +260,7 @@ nav a:hover {
     }
 
     .earth {
-        scale: 1.2;
+        scale: 1;
         right: 0;
         position: absolute;
         z-index: -1;
