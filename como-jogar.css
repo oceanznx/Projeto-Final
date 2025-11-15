@@ -8,7 +8,7 @@
 
 body {
     font-family: Poppins, sans-serif;
-    background: linear-gradient(135deg, #000000, #0c1414, #1b2d2d, #587c7c);
+    background: linear-gradient(135deg, #000000, #0c1414, #1b2d2d, #2c5045);
     color: white;
 }
 
@@ -179,6 +179,11 @@ hr {
         margin: auto;
         padding: 2rem;
     }
+
+    .scroll-light {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .scroll-light {
@@ -213,6 +218,8 @@ body.scrolling .scroll-light {
     filter: blur(90px);
     opacity: 1;
 }
+
+
 
 
 

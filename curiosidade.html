@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades - BioQuest</title>
+    <link rel="stylesheet" href="curiosidades.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+<div class="scroll-light"></div>
+
+<header class="header">
+    <img class="logo" src="logo2.png" alt="BioQuest">
+    <a href="index.html" class="back-btn">⟵ Voltar</a>
+</header>
+
+<main>
+
+    <section class="intro">
+        <h1 data-aos="fade-down" data-aos-duration="1200">Curiosidades</h1>
+        <p data-aos="fade-down" data-aos-duration="1500">
+            Explore fatos incríveis sobre animais terrestres, marinhos e pré-históricos.
+        </p>
+    </section>
+
+    <section class="catalogo">
+
+        <!-- CARD 1 -->
+        <div class="card" data-aos="zoom-in" data-aos-duration="1300">
+            <img src="leao.jpg" alt="Leão">
+            <hr>
+            <div class="text">
+                <h3>🦁 Leão</h3>
+                <p>O rugido de um leão pode ser ouvido a até 8 km de distância.</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card" data-aos="zoom-in" data-aos-duration="1500">
+            <img src="polvo.jpg" alt="Polvo">
+             <hr>
+            <div class="text">
+                <h3>🐙 Polvo</h3>
+                <p>Polvos possuem 9 cérebros e 3 corações e são extremamente inteligentes.</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card" data-aos="zoom-in" data-aos-duration="1700">
+            <img src="aguia.jpg" alt="Águia">
+             <hr>
+            <div class="text">
+                <h3>🦅 Águia</h3>
+                <p>A visão da águia é até 8 vezes melhor do que a de um humano.</p>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card" data-aos="zoom-in" data-aos-duration="1900">
+            <img src="baleia-azul.jpg" alt="Baleia Azul">
+             <hr>
+            <div class="text">
+                <h3>🐋 Baleia-Azul</h3>
+                <p>Seu coração pode ser do tamanho de um carro pequeno.</p>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card" data-aos="zoom-in" data-aos-duration="2100">
+            <img src="trex.jpg" alt="T-Rex">
+             <hr>
+            <div class="text">
+                <h3>🦖 T-Rex</h3>
+                <p>Apesar do tamanho, o T-Rex tinha um olfato extremamente forte.</p>
+            </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card" data-aos="zoom-in" data-aos-duration="2300">
+            <img src="tartaruga-marinha.webp" alt="Tartaruga Marinha">
+             <hr>
+            <div class="text">
+                <h3>🐢 Tartaruga Marinha</h3>
+                <p>Elas podem viver mais de 100 anos e atravessar oceanos inteiros.</p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init({
+    once: false,
+    duration: 800,
+    easing: "ease-in-out",
+    offset: 80,
+    mirror: true
+});
+
+const light = document.querySelector(".scroll-light");
+let timeout;
+
+window.addEventListener("scroll", () => {
+    const y = window.scrollY * 0.55;
+    light.style.transform = `translate(-50%, ${y}px)`;
+
+    document.body.classList.add("scrolling");
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+        document.body.classList.remove("scrolling");
+    }, 150);
+});
+</script>
+
+</body>
+</html>
