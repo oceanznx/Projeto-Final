@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Jogar - BioQuest</title>
+    <link rel="stylesheet" href="como-jogar.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    
+    <div class="scroll-light"></div>
+
+
+
+
+
+
+<header class="header">
+    <img class="logo" src="logo2.png" alt="BioQuest">
+    <a href="index.html" class="back-btn">⟵ Voltar</a>
+</header>
+
+
+<main>
+
+    <section class="intro">
+        <h1 data-aos="fade-down" data-aos-duration="1300">Como Jogar</h1>
+        <p data-aos="fade-down" data-aos-duration="1500">
+            Aprenda como explorar os biomas, responder desafios e acumular pontos no BioQuest.
+        </p>
+    </section>
+
+     <hr>
+  
+    <section class="how-section">
+        <div class="how-card" data-aos="fade-right" data-aos-duration="1400">
+            <h2>🎯 Objetivo do BioQuest</h2>
+            <p>
+                Seu objetivo é responder perguntas sobre diversos animais, ganhar XP, subir de nível e tentar alcançar o topo do ranking global.
+            </p>
+        </div>
+    </section>
+
+    <hr>
+    
+    <section class="biomes">
+        <div class="biome-card" data-aos="fade-right" data-aos-duration="1400">
+            <h3>🦁 Terrestre</h3>
+            <p>Desafios sobre animais de florestas, desertos e montanhas.</p>
+        </div>
+
+        <div class="biome-card" data-aos="fade-right" data-aos-duration="1400">
+            <h3>🐬 Marinho</h3>
+            <p>Criaturas que habitam mares, oceanos, rios e lagoas.</p>
+        </div>
+
+        <div class="biome-card" data-aos="fade-right" data-aos-duration="1400">
+            <h3>🦖 Pré-Histórico</h3>
+            <p>Dinos, criaturas extintas e seres da era pré-histórica.</p>
+        </div>
+    </section>
+
+  <hr>
+
+    <section class="how-section">
+        <div class="how-card" data-aos="fade-left" data-aos-duration="1400">
+            <h2>🧠 Como funciona o quiz?</h2>
+            <ul>
+                <li>Você recebe uma pergunta sobre um animal.</li>
+                <li>Pode ter imagem, descrição ou curiosidade.</li>
+                <li>Escolha uma das quatro alternativas.</li>
+                <li>Recebe pontos por acertos e velocidade.</li>
+                <li>Combos aumentam seu multiplicador.</li>
+            </ul>
+        </div>
+    </section>
+
+  <hr>
+
+    <section class="xp-section">
+        <div class="how-card" data-aos="fade-right" data-aos-duration="1400">
+            <h2>⭐ Pontos & XP</h2>
+            <p>Acertos dão pontos e XP. Subir de nível desbloqueia novos biomas e recompensas.</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="rank-section">
+        <div class="how-card" data-aos="fade-left" data-aos-duration="1400">
+            <h2>🏆 Ranking Global</h2>
+            <p>Compita com outros jogadores e tente entrar no Top 10 semanal.</p>
+        </div>
+    </section>
+
+    <hr>
+   
+    <section class="start-section">
+        <a data-aos="zoom-in" data-aos-duration="1000" href="#" class="start-btn">Começar Agora</a>
+    </section>
+
+</main>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init({
+    once: false,        
+    duration: 1200,      
+    easing: "ease-in-out",
+    offset: 60,          
+    mirror: true,        
+});
+
+const light = document.querySelector(".scroll-light");
+let scrollingTimeout;
+
+window.addEventListener("scroll", () => {
+    const y = window.scrollY * 0.55;
+
+    light.style.transform = `translate(-50%, ${y}px)`;
+
+    // ativa efeito de "intensidade ao rolar"
+    document.body.classList.add("scrolling");
+
+    clearTimeout(scrollingTimeout);
+    scrollingTimeout = setTimeout(() => {
+        document.body.classList.remove("scrolling");
+    }, 150);
+});
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
