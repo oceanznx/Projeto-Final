@@ -233,7 +233,7 @@ nav a:hover {
     }
 
     .earth{
-        scale:0.8;
+        scale: 1.1;
         top: 10%;
         right: -27%;
     }
@@ -260,7 +260,7 @@ nav a:hover {
     }
 
     .earth {
-        scale: 1.1;
+        scale: 1.2;
         right: 0;
         position: absolute;
         z-index: -1;
@@ -359,16 +359,17 @@ nav a:hover {
 
   /* menu lateral vindo da direita */
   nav.nav-links {
+    border: solid 3px rgb(90, 128, 106);
     position: fixed;
     top: 0;
     right: 0;                /* começa fora da tela no lado direito */
-    height: 100%;
-    width: 180px;            /* largura da barra */
+    height:60%;
+    width: 100px;            /* largura da barra */
     background: rgba(48, 80, 80, 0.98);
     backdrop-filter: blur(6px);
     display: flex;
     flex-direction: column;
-    padding: 4rem 1.5rem;
+    padding: 5rem;
     gap: 1.5rem;
     transform: translateX(100%); /* escondido à direita */
     opacity: 0;
@@ -383,11 +384,15 @@ nav a:hover {
     opacity: 1;
   }
 
+  nav a{
+    position: relative;
+    top: 25%;
+  }
+
   /* links estilizados */
   nav.nav-links a {
-    margin-top: 70%;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.85rem;
+    font-weight: 500;
     color: #e7f7f2;
     text-decoration: none;
     transition: color 0.18s ease, transform 0.18s ease;
@@ -395,7 +400,6 @@ nav a:hover {
   nav.nav-links a:hover {
     color: #7c917c;
     transform: translateX(-4px);
-    
   }
 
   /* reposiciona header items para o mobile */
