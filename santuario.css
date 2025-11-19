@@ -1,0 +1,173 @@
+/* Resets e Importações (Mantenha o que você já tinha) */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    /* Certifica que o texto da lore seja legível */
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* ====================================
+   ESTILOS GERAIS DA PÁGINA DE LORE
+   ==================================== */
+
+.lore-page-main {
+    padding: 5rem 0 3rem; /* Espaço do header e rodapé */
+    display: flex;
+    justify-content: center;
+}
+
+/* Título Principal e Subtítulo */
+.main-title {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px #a45bff, 0 0 15px rgba(164, 91, 255, 0.5); /* Forte efeito neon */
+    letter-spacing: 0.2rem;
+    margin-bottom: 0.5rem;
+    z-index: 10;
+}
+
+.subtitle {
+    color: #d8c1ff;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(164, 91, 255, 0.3);
+    padding-bottom: 1rem;
+}
+
+img {
+  width: 220px;
+  height: auto;
+}
+
+/* ====================================
+   AS TABULETAS (AS SEÇÕES DE LORE)
+   ==================================== */
+
+.tabuleta {
+    /* Aparência de uma pedra ou tabuleta antiga */
+    background: rgba(10, 5, 20, 0.7); /* Fundo muito escuro */
+    border: 1px solid #3d1a5c;
+    border-radius: 10px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    box-shadow: 0 0 10px rgba(164, 91, 255, 0.15), inset 0 0 8px rgba(164, 91, 255, 0.1);
+    transition: 0.3s;
+}
+
+.tabuleta:hover {
+    /* Leve destaque ao passar o mouse */
+    border-color: #a45bff;
+    box-shadow: 0 0 15px rgba(164, 91, 255, 0.4), inset 0 0 10px rgba(164, 91, 255, 0.2);
+}
+
+.tabuleta h2 {
+    color: #e6d4ff;
+    font-size: 1.8rem;
+    text-shadow: 0 0 5px #a45bff;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+/* Layout de Duas Colunas para a Seção de Classes */
+.content-body.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .content-body.two-columns {
+        grid-template-columns: 1fr; /* Volta para uma coluna em telas menores */
+    }
+}
+
+.content-body p, .content-body li {
+    color: #d8c1ff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para as listas de Classes */
+.content-body ul {
+    list-style: none; /* Remove o bullet padrão */
+    padding-left: 0;
+}
+
+.content-body ul li {
+    position: relative;
+    padding-left: 1.5rem; /* Espaço para nosso novo bullet */
+    margin-bottom: 0.7rem;
+}
+
+.content-body ul li::before {
+    content: 'ᛟ'; /* Runa como bullet point (substitua por outra runa ou símbolo se preferir) */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #a45bff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 0 0 4px #a45bff;
+}
+
+/* ====================================
+   ESTILOS PARA A TABELA DE CLASSES
+   ==================================== */
+
+.dino-classes-table {
+    width: 100%;
+    margin: 2.5rem 0;
+    border-collapse: collapse; /* Para bordas unificadas */
+    font-size: 0.95rem;
+    text-align: left;
+    color: #e6d4ff; /* Texto levemente iluminado */
+}
+
+/* Estilo para o Cabeçalho da Tabela (O Título da Tabuleta) */
+.dino-classes-table thead th {
+    background: rgba(164, 91, 255, 0.25); /* Fundo roxo semi-transparente e escuro */
+    color: #fff;
+    padding: 1.2rem 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Borda inferior que simula um brilho neon */
+    border-bottom: 3px solid #a45bff; 
+    text-shadow: 0 0 5px rgba(164, 91, 255, 0.4);
+}
+
+/* Estilo para as Células de Dados */
+.dino-classes-table tbody td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid rgba(61, 26, 92, 0.5); /* Linha divisória discreta */
+    background: rgba(0, 0, 0, 0.2); /* Fundo mais escuro nas células */
+    transition: background 0.2s;
+}
+
+/* Efeito de destaque ao passar o mouse na linha */
+.dino-classes-table tbody tr:hover {
+    background: rgba(164, 91, 255, 0.1); /* Brilho sutil */
+    color: #fff;
+}
+
+/* Estilo das notas de custo */
+.cost-notes {
+    font-style: italic;
+    color: #9f86b8;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Destaque para os custos dentro da tabela (opcional) */
+.dino-classes-table tbody td:nth-child(2) {
+    color: #ff4d4d; /* Cor de Carne/Fóssil para o custo */
+    font-weight: bold;
+}

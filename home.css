@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+
+
+body {
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#000000,#000000,#030200,#000000);
+  color:white;
+  min-height:100vh;
+  line-height:1.5;
+  overflow-x:hidden;
+  font-family: poppins;
+}
+
+.cta-button {
+  position: absolute;
+  top: -2%;
+  right: -20%;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1rem;
+  transition: color 0.4s ease;
+  transition: text-shadow 0.4s ease;
+  border-radius: 30px;
+  border: solid 2px #501888 ;
+  padding: 0.5rem 1rem;
+}
+
+
+.cta-button:hover {
+  color: #a778d5;
+  text-shadow: 0 0 25px #501888;
+  border:solid 2px #a778d5;
+}
+
+
+
+/* Background Blur */
+.gradient-blur { position:absolute; top:0; right:0; opacity:0.5; z-index:-1; }
+.blur { position:absolute; top:20%; right:0; width:50rem; height:0; box-shadow:0 0 700px 10px rgba(162, 62, 255, 0.34); rotate:-30deg; z-index:-1; }
+
+/* Container */
+.container { width:100%; margin:0 auto; padding:0 2rem; position:relative; overflow:hidden; }
+
+/* Header */
+header { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
+header .logo img { width:150px; height:auto; scale:1.6;}
+
+/* ====================================
+   LOGO PRIMAL - Efeito Metal Gélido e Neon
+   ==================================== */
+
+.primal-text-logo {
+    /* Base da Fonte */
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    
+    /* Cor de Base (Metal Escuro) */
+    color: #503161;
+    
+    /* Aplica o Brilho e o 3D (Text-Shadow em camadas) */
+    text-shadow: 
+        /* 1. Camada de Profundidade 3D (Metal) */
+        1px 1px 0 #333,
+        2px 2px 0 #222,
+        3px 3px 0 #111,
+        4px 4px 0 #0a0a0a,
+        
+        /* 2. Camada de Neon Roxo (O brilho suave) */
+        0 0 10px rgba(164, 91, 255, 0.5), 
+        
+        /* 3. Camada de Neon Forte (O núcleo do brilho) */
+        0 0 20px #a45bff,
+        
+        /* 4. Camada Interna da Cor (O texto fica branco/cinza claro) */
+        0 0 0 5px #e0e0e0;
+        
+    /* Opcional: Adicionar uma animação sutil de pulsação (Glow Pulse) */
+    animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        text-shadow: 
+            4px 4px 0 #0a0a0a,
+            0 0 15px rgba(164, 91, 255, 0.6), 
+            0 0 25px #a45bff;
+    }
+    to {
+        text-shadow: 
+            4px 4px 0 #0a0a0a,
+            0 0 5px rgba(164, 91, 255, 0.3),
+            0 0 10px #d8c1ff;
+    }
+}
+
+/* Garante que o AOS (efeito de transição) continue funcionando */
+.primal-text-logo[data-aos] {
+    opacity: 0;
+    transition: opacity 0.5s ease-out; /* Adicione sua transição AOS aqui */
+}
+
+img {
+  width: 220px;
+  height: auto;
+}
+
+/* Nav Desktop */
+.nav-links { display:flex; gap:3rem; position:relative; }
+.nav-links a { position:relative; color:white; text-decoration:none; padding-bottom:6px; font-size:1rem; letter-spacing:0.12rem; transition:color 0.3s; }
+.nav-links a:hover { color:#b389ff; }
+
+.nav-links a::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0%;
+    height:2px;
+    background:linear-gradient(90deg,#3d1a5c,#a45bff,#3d1a5c);
+    box-shadow:0 0 6px #a45bff8a;
+    transition:width 0.32s;
+    border-radius:10px;
+}
+
+.nav-links a:hover::after { width:100%; }
+
+.nav-links a span.runa {
+    position:absolute;
+    top:-22px;
+    left:50%;
+    transform:translateX(-50%) scale(0.7);
+    font-size:1.3rem;
+    color:#a45bff;
+    text-shadow:0 0 12px #a45bff;
+    opacity:0;
+    transition:0.35s;
+    pointer-events:none;
+}
+
+.nav-links a:hover span.runa {
+    opacity:1;
+    transform:translateX(-50%) scale(1);
+}
+
+/* Hamburger Menu */
+.menu-btn {
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+    z-index:10002;
+}
+.menu-btn span {
+    width:28px;
+    height:3px;
+    background:#d8c1ff;
+    border-radius:5px;
+    transition:all 0.4s ease;
+}
+
+/* Main */
+main { display:flex; flex-direction:column; justify-content:center; min-height:calc(90vh - 1rem); }
+.content { max-width:40rem; margin-left:10%; z-index:10; }
+
+/* Tag Box */
+.tag-box {
+    position:relative;
+    width:18rem;
+    height:2.5rem;
+    border-radius:50px;
+    background:linear-gradient(to right,#3d1a5c,#a45bff,#6b32a8,#2b0a3b,#3d1a5c);
+    background-size:200%;
+    animation:gradient 2.5s linear infinite;
+}
+.tag-box .tag {
+    position:absolute;
+    inset:3px;
+    background:#000000;
+    border-radius:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#c8a2ff;
+    transition:0.5s;
+}
+.tag-box .tag:hover { cursor:pointer; color:#d7baff; }
+
+/* Heading */
+.content h2 {
+    font-size:3rem;
+    font-weight:500;
+    letter-spacing:0.1rem;
+    margin:2rem 0;
+    line-height:1.2;
+    text-shadow:0 0 5px #c8a2ff;
+    color:#ffffff;
+}
+
+/* Description */
+.content p.desc {
+    font-size:1.2rem;
+    max-width:35rem;
+    color:#e6d4ff;
+    margin-top:1rem;
+}
+
+/* Buttons */
+.buttons { display:flex; gap:1rem; margin-top:3rem; }
+
+.btn-start, .btn-login {
+    border-radius:50px;
+    font-size:1.2rem;
+    font-weight:600;
+    letter-spacing:0.15rem;
+    padding:0.7rem 1.2rem;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn-start {
+    color:white;
+    border:1px solid #d8c1ff;
+}
+.btn-start:hover {
+    background:#0f031a;
+    border-color:#a45bff;
+}
+
+.btn-login {
+    background:rgb(255, 255, 255);
+    color:#000;
+    border:2px solid #000;
+}
+.btn-login:hover {
+   background:#0f031a;
+    color:white;
+    border:2px solid #c8a2ff;
+}
+
+.portal-wrapper {
+  position: absolute;
+  top: 12%;
+  right: 15%;
+  transform: translateY(-50%);
+  width: 630px;
+  height: 630px;
+  pointer-events: none;
+}
+
+/* portal base */
+.portal {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  overflow: visible;
+
+  background: radial-gradient(
+    circle at 40% 35%,
+    rgba(36, 11, 67, 0.674),
+    rgba(47, 16, 119, 0.442),
+    rgb(0, 0, 0)
+  );
+
+  box-shadow:
+    0 0 60px rgba(162,94,255,0.45),
+    inset 0 0 35px rgba(200,120,255,0.25);
+
+  border: 6px solid rgba(170,110,255,0.35);
+  animation: portalPulseArc 4.6s ease-in-out infinite;
+}
+
+/* linha divisória / círculo interior */
+.portal-inner-circle {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 4px solid rgba(200,150,255,0.28);
+  box-shadow: 0 0 30px rgba(165,110,255,0.18);
+  background: radial-gradient(circle at 50% 45%, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ============================
+   SEGUNDA LINHA DIVISÓRIA
+   ============================ */
+
+.portal-inner-circle-2 {
+  position: absolute;
+  width: 48%;
+  height: 48%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  
+  border: 3px solid rgba(204, 160, 255, 0.564);
+  box-shadow:
+    0 0 22px rgba(180, 120, 255, 0.25),
+    inset 0 0 10px rgba(155, 80, 255, 0.25);
+
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0)
+  );
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+/* central rune */
+.rune-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 105px;
+  color: #c69aff;
+  font-weight: 900;
+  text-shadow:
+    0 0 22px #cb9fff,
+    0 0 45px #852cff,
+    0 0 65px #6d16ff;
+  z-index: 5;
+  animation: runePulse 3s ease-in-out infinite;
+}
+
+/* pulse runa */
+@keyframes runePulse {
+  0%,100% { transform: translate(-50%, -50%) scale(1); opacity:1; }
+  50% { transform: translate(-50%, -50%) scale(1.12); opacity:0.9; }
+}
+
+/* ---------- ANEL PRINCIPAL (corrigido) ---------- */
+.rune-circle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --r: 260px; /* raio */
+  z-index: 3;
+  animation: spinRunes 22s linear infinite;
+}
+
+.rune-circle span {
+  --angle: calc(var(--i) * 36deg);
+  position: absolute;
+  left: 48%;
+  top: 45%;
+  transform-origin: center;
+  transform:
+    rotate(var(--angle))
+    translateY(calc(-1 * var(--r)))
+    rotate(calc(-1 * var(--angle)));
+  font-size: 32px;
+  color: #e7cfff;
+  text-shadow: 0 0 8px #b46cff, 0 0 14px #7a2cff;
+  z-index: 4;
+}
+
+
+.rune-circle-2 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --r: 180px;
+  z-index: 3;
+  animation: spinRunesReverse 18s linear infinite;
+}
+
+.rune-circle-2 span {
+  --angle: calc(var(--i) * 45deg);
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform:
+    rotate(var(--angle))
+    translateY(calc(-1 * var(--r)))
+    rotate(calc(-1 * var(--angle)));
+  font-size: 22px;
+  color: #f1dbff;
+  text-shadow: 0 0 6px #bb7aff, 0 0 10px #8e43ff;
+  z-index: 4;
+}
+
+.rune-circle-3 {
+   position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --r: 180px;
+  z-index: 3;
+  animation: spinRunesReverse 18s linear infinite;
+}
+
+@keyframes spinRunes { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+@keyframes spinRunesReverse { from{transform:rotate(360deg);} to{transform:rotate(0deg);} }
+
+
+.portal-cracks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portal-cracks span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(200,160,255,0.95), rgba(120,50,200,0));
+  transform-origin: top center;
+  border-radius: 2px;
+  opacity: 0.18;
+  filter: blur(0.6px);
+  animation: crackPulse 4s ease-in-out infinite;
+  scale: 1;
+}
+
+
+.portal-cracks span { transform: rotate(var(--a)) translateY(-140px); }
+
+@keyframes crackPulse {
+  0%,100% { opacity: 0.12; height: 100px; }
+  50% { opacity: 0.85; height: 160px; }
+}
+
+
+.portal-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+.portal-particles i {
+  --angle: calc(var(--i) * 36deg); 
+  --orbit-r: 350px; 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size, 7px);
+  height: var(--size, 7px);
+  background: radial-gradient(circle, #b44cf5d3 0%, #1f094a 70%);
+  border-radius: 50%;
+  transform-origin: center;
+  transform: rotate(var(--angle)) translateY(calc(-1 * var(--orbit-r))) rotate(calc(-1 * var(--angle)));
+  opacity: 0.9;
+  filter: blur(0.4px);
+  animation: orbitRotate calc(10s + (var(--i) * 0.6s)) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* variação de opacidade e escala para parecer mais natural */
+.portal-particles i:nth-child(odd) { opacity: 0.95; transform: scale(1.02) translateZ(0); }
+.portal-particles i:nth-child(even) { opacity: 0.82; transform: scale(0.88) translateZ(0); }
+
+@keyframes orbitRotate {
+  from { transform: rotate(var(--angle)) translateY(calc(-1 * var(--orbit-r))) rotate(calc(-1 * var(--angle))); }
+  to   { transform: rotate(calc(var(--angle) + 360deg)) translateY(calc(-1 * var(--orbit-r))) rotate(calc(-1 * var(--angle) - 360deg)); }
+}
+
+/* diminuir o raio em telas menores */
+@media (max-width: 1200px) {
+  .portal-wrapper { right: -10%; width: 420px; height: 420px; }
+  .rune-circle { --r: 165px; }
+  .rune-circle-2 { --r: 120px; }
+  .portal-inner-circle { width: 64%; height: 64%; }
+  .portal-particles i { --orbit-r: 210px; }
+}
+
+@media (max-width: 768px) {
+  .portal-wrapper { right: -32%; top: 60%; width: 260px; height: 260px; opacity: 0.25; transform: none; }
+  .rune-main { font-size: 56px; }
+  .rune-circle { --r: 100px; }
+  .rune-circle-2 { --r: 70px; }
+  .portal-inner-circle { width: 60%; height: 60%; }
+  .portal-particles i { --orbit-r: 120px; }
+}
+
+@media (max-width: 768px) {
+    /* ====================================
+       1. HEADER E NAVEGAÇÃO
+       ==================================== */
+
+    header {
+        padding: 1rem 1.5rem; /* Diminui o padding do header */
+    }
+
+    /* Mostra o botão hamburger */
+    .menu-btn {
+        display: flex;
+    }
+
+    /* Animação do Hamburger para X (requer menu-btn.active no JS) */
+    .menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Menu mobile em tela cheia */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(100%); /* Esconde o menu fora da tela */
+        transition: transform 0.4s ease-in-out;
+        z-index: 10001;
+    }
+
+    .nav-links.active {
+        transform: translateX(0); /* Mostra o menu */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem; /* Aumenta o tamanho dos links no menu mobile */
+        letter-spacing: 0.2rem;
+    }
+
+    /* Logo - Redimensiona a imagem para caber melhor */
+    header img {
+        width: 150px;
+    }
+
+
+    /* ====================================
+       2. CONTEÚDO PRINCIPAL (TEXTO)
+       ==================================== */
+
+    main {
+        min-height: 85vh;
+        justify-content: flex-start; /* Alinha o conteúdo ao topo */
+        padding-top: 40px;
+    }
+
+    .content {
+        margin-left: 0; /* Remove o margin da esquerda */
+        padding: 0 1.5rem;
+        text-align: center; /* Centraliza todo o texto */
+        max-width: 100%;
+    }
+
+    .tag-box {
+        margin: 0 auto; /* Centraliza a tag */
+    }
+
+    .content h2 {
+        font-size: 2rem; /* Reduz o tamanho do título */
+        margin: 1.5rem 0;
+    }
+
+    .content p.desc {
+        font-size: 1rem; /* Reduz o tamanho da descrição */
+        max-width: 90%;
+        margin: 1rem auto;
+    }
+
+
+    /* ====================================
+       3. PORTAL (AJUSTE FINO)
+       ==================================== */
+
+    /* Garante que o ajuste existente para o portal seja aplicado corretamente */
+    .portal-wrapper { 
+        right: 15%; 
+        top: 42%; 
+        width: 260px; 
+        height: 260px; 
+        opacity: 0.25; 
+        transform: none; 
+        pointer-events: none;
+        scale: 0.85;
+    }
+
+    /* Remove o blur de fundo para mobile */
+    .blur {
+        display: none;
+    }
+
+
+    /* ====================================
+       4. CTA (DOWNLOAD)
+       ==================================== */
+
+    .main-cta {
+        margin-top: 3rem; 
+        text-align: center;
+        width: 100%;
+        order: 10; /* Garante que fique abaixo do texto principal */
+    }
+
+    .cta-button {
+        position: relative; /* Volta a ser relativo/normal */
+        top: auto;
+        right: auto;
+        display: block;
+        width: 90%;
+        max-width: 400px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+}

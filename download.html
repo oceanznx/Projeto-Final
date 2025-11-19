@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Download Primal — Jogue Agora!</title>
+
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="santuario.css" /> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="download.css">
+</head>
+
+<body>
+
+  <header>
+
+    <div class="menu-btn" id="menu-btn" data-aos="fade-down" data-aos-duration="2500">
+        <span></span><span></span><span></span>
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+       
+        <a href="santuario.html" data-aos="fade-down" data-aos-duration="1800">Santuário<span class="runa">ᚨᛉ</span></a>
+        <a href="index.html" data-aos="fade-down" data-aos-duration="2200">Portal<span class="runa">ᛟᚱ</span></a>
+        <a href="bestiario.html" data-aos="fade-down" data-aos-duration="2600">Bestiário<span class="runa">ᚾᚨ</span></a>
+        <a href="guardioes.html" data-aos="fade-down" data-aos-duration="3000">Guardiões<span class="runa">ᛞᚱ</span></a>
+    </nav>
+  </header>
+
+
+
+  <img class="logod" src="Logo.png" alt="PRIMAL logo" data-aos="fade-down" data-aos-duration="1500">
+
+  <main class="download-page-main">
+    <div class="download-content-wrapper" data-aos="fade-up" data-aos-delay="500">
+
+        <h1 class="main-title">O Rito se Conclui. Sua Jornada Começa.</h1>
+        <p class="subtitle">Baixe a versão <strong>DEMO</strong> de PRIMAL, feita no GameMaker.</p>
+
+        <div class="game-showcase-container">
+            <img src="Capa.png" alt="Arte de Destaque do Jogo Primal" class="game-art">
+            
+            <div class="download-info">
+                <h2>Recursos Chave do Jogo:</h2>
+                <ul class="key-features-list">
+                    <li>Sistema de Cartas Único baseado em Sacrifício (Carne).</li>
+                    <li>Progressão Roguelite com árvore de decisões.</li>
+                    <li>Esta <strong>Demo</strong> vem com mais de 20 Cartas e Habilidades exclusivas.</li>
+                    <li>Gráficos em pixel art sombrios e envolventes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="[LINK_FINAL_DO_SEU_EXECUTÁVEL]" target="_blank" class="download-final-button" data-aos="zoom-in" data-aos-delay="800">
+            DOWNLOAD PRIMAL (v1.0.0)
+        </a>
+        
+        <p class="small-note">Compatível com Windows 10/11 (64-bit).</p>
+
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+  AOS.init();
+
+  const menuBtn = document.getElementById("menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  const navOverlay = document.getElementById("nav-overlay");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuBtn.classList.toggle("active");
+    navOverlay.classList.toggle("active");
+  });
+
+  navOverlay.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuBtn.classList.remove("active");
+    navOverlay.classList.remove("active");
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardiões — PRIMAL</title>
+    
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="guardioes.css"> <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body>
+
+    <div class="crt-filter-overlay" aria-hidden="true"></div>
+
+    <header>
+      <img src="Logo.png" alt="PRIMAL logo" data-aos="fade-down" data-aos-duration="1500">
+
+      <div class="menu-btn" id="menu-btn" data-aos="fade-down" data-aos-duration="2500">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="santuario.html" data-aos="fade-down" data-aos-duration="1800">Santuário<span class="runa">ᚨᛉ</span></a>
+        <a href="index.html" data-aos="fade-down" data-aos-duration="2200">Portal<span class="runa">ᛟᚱ</span></a>
+        <a href="bestiario.html" data-aos="fade-down" data-aos-duration="2600">Bestiário<span class="runa">ᚾᚨ</span></a>
+    </header>
+
+    <main class="select-page">
+        <div class="titu" data-aos="fade-down" data-aos-duration="2000">
+            <h1>OS GUARDIÕES</h1>
+            <p>Chefes e Sub-Chefes</p>
+        </div>
+
+        <div class="select-container" data-aos="fade-up" data-aos-duration="2000">
+            
+            <div class="character-preview">
+                <div class="character-name">O CRONISTA PRIMAL</div>
+                <div class="character-image">
+                    <img id="guardian-image" src="boss1.jpg" alt="O Cronista Primal - Guardião do Jogo" class="pixel-art-img">
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h2 class="panel-title">STATUS</h2>
+                <div class="stats-list">
+                    <p>FORÇA: <span>ANCIÃ</span></p>
+                    <p>TRIBOS: <span>TODAS</span></p>
+                    <p>DIFICULDADE: <span>DEMO (FÁCIL)</span></p>
+                </div>
+                
+                <h2 class="panel-title">LORE</h2>
+                <p class="lore-text">O Cronista é o narrador e o mestre de Primal. Um ser feito de matéria fóssil e mistérios do passado. Na demo, ele serve como seu primeiro oponente, dominando as regras básicas e guiando sua ascensão.</p>
+
+            </div>
+
+            <div class="selection-grid">
+                <div class="selection-box selected">
+                    <img src="cronista.png" alt="O Cronista" class="pixel-art-img">
+                    <div class="box-name">CRONISTA</div>
+                </div>
+                
+                <div class="selection-box locked">
+                    <span class="lock-icon">🔒</span>
+                    <div class="box-name">BLOQUEADO</div>
+                </div>
+                <div class="selection-box locked">
+                    <span class="lock-icon">🔒</span>
+                    <div class="box-name">BLOQUEADO</div>
+                </div>
+                <div class="selection-box locked">
+                    <span class="lock-icon">🔒</span>
+                    <div class="box-name">BLOQUEADO</div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      
+      const menuBtn = document.getElementById("menu-btn");
+      const navLinks = document.getElementById("nav-links");
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+      });
+    </script>
+</body>
+</html>
